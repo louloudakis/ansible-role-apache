@@ -34,6 +34,9 @@
   when: "apache_version.split('.')[1] == '4'"
 
 # Configure Apache.
+- include: "configure-{{ ansible_os_family }}-extra.yml"
+  static: no
+
 - include: "configure-{{ ansible_os_family }}.yml"
   static: no
 
