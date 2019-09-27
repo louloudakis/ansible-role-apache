@@ -7,7 +7,7 @@
     state: present
   with_items:
     - { regexp: '^TraceEnable', line: 'TraceEnable Off'}
-    - { regexp: '^ServerTokens', line: 'ServerTokens ProductOnly'}
+    - { regexp: '^ServerTokens', line: 'ServerTokens Prod'}
     - { regexp: '^ServerSignature', line: 'ServerSignature Off'}
     - { regexp: '^ServerName', line: "ServerName {{ ansible_default_ipv4.address }}"}
     - { regexp: '^Options', line: "Options -Indexes -FollowSymLinks"}
