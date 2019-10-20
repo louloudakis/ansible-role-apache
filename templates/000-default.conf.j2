@@ -1,11 +1,8 @@
-<VirtualHost *:80>
+<VirtualHost *:{{ apache_listen_port_http }}>
   ServerAdmin webmaster@localhost
   ServerName {{ apache_listen_ip }}
 
   DocumentRoot /var/www/html
-
-
-  
 
   ErrorLog ${APACHE_LOG_DIR}/error.log
 
