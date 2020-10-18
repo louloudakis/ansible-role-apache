@@ -12,3 +12,10 @@
     - { regexp: '^ServerName', line: "ServerName {{ ansible_default_ipv4.address }}"}
     - { regexp: '^Options', line: "Options -Indexes -FollowSymLinks"}
   notify: restart apache
+
+- name: Ensure nghttp2 is installed
+  apt:
+    name: "nghttp2"
+    state: present
+  when: ansible_distribution == "Debian"
+  become: yes
